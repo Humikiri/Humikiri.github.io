@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>オンライン囲碁リーグ</title>
+  <style>
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 820px;
+      margin: 40px auto;
+      padding: 30px;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.2em;
+      margin-bottom: 10px;
+      color: #222;
+    }
+    .catch {
+      text-align: center;
+      font-size: 1.3em;
+      margin-bottom: 30px;
+      color: #555;
+    }
+    .price-box {
+      background: #f0fff4;
+      border: 2px solid #38a169;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 25px 0;
+      text-align: center;
+    }
+    .price-box h2 {
+      font-size: 1.6em;
+      margin-bottom: 10px;
+      color: #2f855a;
+    }
+    .price-box ul {
+      list-style: none;
+      padding: 0;
+      font-size: 1.1em;
+    }
+    .price-box ul li {
+      margin: 10px 0;
+    }
+    .highlight-free {
+      margin-top: 20px;
+      background: #fffbeb;
+      border: 2px solid #ecc94b;
+      border-radius: 10px;
+      padding: 15px;
+      font-size: 1.3em;
+      font-weight: bold;
+      color: #b7791f;
+      text-align: center;
+      animation: blink 1.8s infinite;
+    }
+    @keyframes blink {
+      0% { background: #fffbeb; }
+      50% { background: #fff3c4; }
+      100% { background: #fffbeb; }
+    }
+    .info {
+      margin: 30px 0;
+      font-size: 1.05em;
+    }
+    ul.features {
+      list-style: none;
+      padding: 0;
+    }
+    ul.features li {
+      margin: 12px 0;
+      padding-left: 1.5em;
+      position: relative;
+    }
+    ul.features li::before {
+      content: "✔";
+      color: #2f855a;
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+    .cta {
+      text-align: center;
+      margin-top: 35px;
+    }
+    .cta a {
+      display: inline-block;
+      padding: 15px 30px;
+      background: #2f855a;
+      color: #fff;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2em;
+      transition: background 0.3s;
+    }
+    .cta a:hover {
+      background: #38a169;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌐 オンライン囲碁リーグ</h1>
+    <p class="catch">6週間ごとのオンラインリーグで、全国の仲間と楽しく対局！</p>
+
+    <div class="price-box">
+      <h2>💰 参加費</h2>
+      <ul>
+        <li>通常プラン：<b>500円</b></li>
+        <li>解説つきプラン：<b>1500円</b></li>
+      </ul>
+      <div class="highlight-free">✨ 初回参加はなんと <span style="color:red;">無料！</span> ✨</div>
+    </div>
+
+    <div class="info">
+      <ul class="features">
+        <li>参加レベル：三段～14級まで幅広く歓迎</li>
+        <li>対局数：1期あたり4～6局、無理なく楽しめる</li>
+        <li>雰囲気：和気あいあい＋解説で学びも充実</li>
+        <li>お試し：1期だけの参加ももちろんOK</li>
+      </ul>
+    </div>
+
+    <div class="cta">
+      <a href="#">👉 今すぐ無料で参加してみる</a>
+    </div>
+  </div>
+</body>
+</html>
