@@ -3,131 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FUMIKIRI // Refactoring Life</title>
-    <style>
-        :root {
-            --bg-color: #ffffff;
-            --text-color: #24292f;
-            --accent-color: #0969da;
-            --sub-color: #57606a;
-            --kizuna-color: #d97706;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: 'Courier New', Courier, monospace;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        /* ターミナル風の演出 */
-        .terminal {
-            width: 90%;
-            max-width: 600px;
-            padding: 20px;
-        }
-
-        .cursor {
-            display: inline-block;
-            width: 10px;
-            height: 1.2rem;
-            background-color: var(--accent-color);
-            animation: blink 1s infinite;
-            vertical-align: middle;
-            margin-left: 5px;
-        }
-
-        @keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }
-
-        h1 {
-            font-size: 1.8rem;
-            margin: 0 0 10px 0;
-            color: var(--accent-color);
-            letter-spacing: 2px;
-        }
-
-        .status-line {
-            color: var(--sub-color);
-            font-size: 0.9rem;
-            margin-bottom: 30px;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        nav ul li {
-            margin: 15px 0;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-size: 1.2rem;
-            transition: 0.3s;
-            display: inline-block;
-        }
-
-        nav ul li a:hover {
-            color: var(--kizuna-color);
-            transform: translateX(10px);
-        }
-
-        nav ul li a::before {
-            content: "> ";
-            color: var(--accent-color);
-        }
-
-        /* 背景の薄い碁盤目模様（エンジニア＋囲碁のメタファー） */
-        .grid-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(rgba(48, 54, 61, 0.2) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(48, 54, 61, 0.2) 1px, transparent 1px);
-            background-size: 40px 40px;
-            z-index: -1;
-        }
-
-        footer {
-            position: absolute;
-            bottom: 20px;
-            font-size: 0.7rem;
-            color: var(--sub-color);
-        }
-    </style>
+    <title>FUMIKIRI_PROJECT // TACTICAL_PORTAL</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="grid-bg"></div> <div class="container">
+<header>
+    <div class="status-line">System.boot_successful; // ver 2.0.26</div>
+	<h1>FUMIKIRI_PROJECT<span class="cursor"></span></h1>
+</header>
 
-<div class="grid-bg"></div>
-
-<main class="terminal">
-    <div class="status-line">System.boot_successful; // ver 2.0.24</div>
-    <h1>HUMIKIRI_PROJECT<span class="cursor"></span></h1>
-    <p style="margin-bottom: 40px;">Refactoring human life via Go, Sax, and Tech.</p>
-
-    <nav>
-        <ul>
-            <li><a href="https://www.twitch.tv/humikiri">LIVE_STREAM (Twitch)</a></li>
-            <li><a href="pages/guideline.html">KIZUNA_FA_GUIDELINE</a></li>
-            <li>COMMUNICATION (Wick):@humikiri</li>
-        </ul>
+<main>
+    <p>公式ドキュメントおよび関連リンクのリポジトリです。</p>
+    
+    <nav style="margin-top: 40px;">
+        <a href="https://twitch.tv/humikiri" class="nav-link" target="_blank">LIVE_STREAM (Twitch)</a>
+        <a href="pages/guideline.html" class="nav-link">KIZUNA_FA_GUIDELINE (マスコットキャラクター「キズナ」二次創作ガイドライン)</a>
+        <div class="nav-link">COMMUNICATION (Wick): @humikiri</div>
     </nav>
 </main>
 
 <footer>
-    &copy; 2026 HUMIKIRI. Executing "Life_Improvement_Script"...
+    <div>&copy; 2026 QiPPU / humikiri </div>
 </footer>
-
+</div>
 </body>
+
 </html>
