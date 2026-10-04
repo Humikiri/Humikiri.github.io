@@ -1,0 +1,54 @@
+---
+import { getCollection, render } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import SiteLayout from "../../layouts/SiteLayout.astro";
+
+interface Props {
+  entry: CollectionEntry<"blog">;
+}
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog", ({ data }) => !data.draft);
+
+  return posts.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const formatDate = (date: Date) =>
+  new Intl.DateTimeFormat("ja-JP", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    timeZone: "UTC",
+  }).format(date);
+---
+
+<SiteLayout title={`${entry.data.title} | Humikiri`} description={entry.data.description}>
+  <article class="mx-auto max-w-3xl py-12 sm:py-16">
+    <nav aria-label="記事ナビゲーション" class="flex flex-wrap gap-x-5 gap-y-2 text-sm">
+      <a class="text-teal-300 transition hover:text-teal-100" href="/">← トップページへ</a>
+      <a class="text-slate-400 transition hover:text-teal-200" href="/blog/">ブログ一覧へ</a>
+    </nav>
+    <header class="mt-8 border-b border-white/10 pb-8">
+      <p class="text-sm text-slate-500">
+        <time datetime={entry.data.pubDate.toISOString()}>{formatDate(entry.data.pubDate)}</time>
+      </p>
+      <h1 class="mt-4 text-3xl font-semibold leading-tight tracking-tight text-white sm:text-5xl">{entry.data.title}</h1>
+      {entry.data.description && <p class="mt-5 text-lg leading-8 text-slate-300">{entry.data.description}</p>}
+      {entry.data.tags.length > 0 && (
+        <ul class="mt-5 flex flex-wrap gap-2" aria-label="タグ">
+          {entry.data.tags.map((tag) => (
+            <li class="rounded-full border border-teal-300/20 bg-teal-300/5 px-3 py-1 text-xs text-teal-200">{tag}</li>
+          ))}
+        </ul>
+      )}
+    </header>
+    <div class="article-content mt-10">
+      <Content />
+    </div>
+  </article>
+</SiteLayout>
